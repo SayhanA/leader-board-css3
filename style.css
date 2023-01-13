@@ -1,0 +1,250 @@
+/* font */
+ @import url('https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@500&display=swap');
+
+ /* common style */
+
+ body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #F3F1FF;
+ }
+ main{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+ }
+ .container{
+    background-color: #FFFFFF;
+    width: 870px;
+    padding: 13px 30px 33px 30px;
+    margin-top: 25px;
+    border-radius: 5px;
+ }
+ hr{
+    border: 1px solid #D1D1D1;  
+ }
+
+
+/* Top players Starts Here*/
+.top-players{
+    margin: 0 0 21px 0;
+}
+.section-title{
+    font-size: 24px;
+    line-height: 36px;
+    color: #562EFF;
+}
+.players{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-row-gap: 30px;
+}
+.player{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.player img{
+    width: 56px;
+    height: 56px;
+}
+.player-name{
+    font-size: 18px;
+}
+/* Top players Ends Here*/
+
+/* Top Blogs Starts Here */
+.top-blogs .section-title{
+    margin: 30px 0;
+}
+.blogs{
+    display: grid;
+    grid-row-gap: 26px;
+    grid-column-gap: 40px;
+    grid-template-columns: repeat(2,1fr);
+}
+.blogs article{
+    display: flex;
+    gap: 16px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.085);
+}
+.blogs .blog-thumnal img{
+    width: 177px;
+    height: 117px;
+}
+.blog-info{
+    padding: 0 25px 0 0 ;
+}
+.blog-title{
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 34px;
+}
+.blog-author{
+    margin-top: 6px;
+    columns: #9F9F9F;
+}
+.blog-author a{
+    color: #562EFF;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0 0 0 5px;
+}
+/* Top Blogs Ends Here */
+
+/* Courses Style Starts Here */
+.courses{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+}
+.course{
+    border-radius: 5px;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.093);
+    padding: 23px;
+}
+.courses-banner img{
+    width: 224px;
+    height: 104px;
+}
+.courses-detail .courses-title{
+   margin-bottom: 10px;
+   color: #1E1E1E;
+}
+.course-author{
+    margin-top: 0;
+    padding-top: 0%;
+    font-size: 15px;
+    line-height: 18px;
+    color: #ED6B4F;
+}
+.course-info{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.course-rating{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    color: #FFC014;
+}
+.course-info span{
+    display: flex ;
+    flex-flow: row nowrap;
+    gap: 20px;
+}
+.course-rating span{
+    color: #aeaeae6f;
+}
+.course-point{
+    padding: 0 10px 0 0 ;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 22px;
+    color: #A2A2A2;
+}
+.course-duration{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    padding: 5px;
+    border-radius: 15px;
+    background-color: #FFE4E8;
+}
+.course-duration img{
+    width: 20px;
+    height: 20px;
+    line-height: 30px;
+
+}
+.course-duration-time{
+    font-size: 15px;
+    color: red;
+}
+/* Courses Style Ends Here */
+
+
+/*---------------------------------
+            Media Queries
+  --------------------------------- */
+
+  /* Mobile Devices */
+  @media only screen and (max-width:688px){
+    .section-title{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container{
+        width: 100%;
+        padding: 13px 0px 33px 0px;
+    }
+    .players,.blogs,.courses{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .player,.blogs article{
+        flex-flow: column nowrap;
+    }
+    .blogs article, .blog-info{
+        padding: 5%;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .course{
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+/* Tablet Devices Media Queries */
+@media only screen and (min-width:689px) and (max-width:992px){
+    .section-title{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container{
+        width: 100%;
+        padding: 13px 0px 33px 0px;
+    }
+    .players,.blogs{
+        grid-template-columns: repeat(2,1fr);
+        padding: 0 50px;
+    }
+    .player,.blogs article{
+        flex-flow: column nowrap;
+    }
+    .blogs article, .blog-info{
+        padding: 5%;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .courses{
+        grid-template-columns: 1fr;
+    }
+    .course{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .courses-detail{
+        padding-left: 30px;
+        width: 50%;
+    }
+    .course-rating{
+    }
+}
