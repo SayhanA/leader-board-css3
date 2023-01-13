@@ -135,13 +135,13 @@
 .course-info span{
     display: flex ;
     flex-flow: row nowrap;
-    gap: 20px;
+    gap: 10px;
 }
 .course-rating span{
     color: #aeaeae6f;
 }
 .course-point{
-    padding: 0 10px 0 0 ;
+    padding: 0 0px 0 0 ;
     font-size: 15px;
     font-weight: 400;
     line-height: 22px;
@@ -166,6 +166,7 @@
 .course-duration-time{
     font-size: 15px;
     color: red;
+    white-space: nowrap;
 }
 /* Courses Style Ends Here */
 
@@ -245,6 +246,10 @@
         padding-left: 30px;
         width: 50%;
     }
-    .course-rating{
+
+
+    .courses-banner img, .blogs .blog-thumnal img{
+        width: 100%;
+        height: auto;
     }
 }
