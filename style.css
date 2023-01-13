@@ -2,6 +2,9 @@
  @import url('https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@500&display=swap');
 
  /* common style */
+:root{
+    --black-color:black
+}
 
  body{
     font-family: 'Poppins', sans-serif;
@@ -22,6 +25,65 @@
  hr{
     border: 1px solid #D1D1D1;  
  }
+
+
+/* Header Starts Here */
+header{
+    width: 100%;
+    height: 100px;
+    background-color: #562EFF;
+}
+header nav{
+    width: 900px;
+    margin: 0 auto;
+    padding: 20px 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    
+}
+.logo{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+.logo img{
+    width: 50px;
+    height: 50px;
+}
+.nav-title{
+    line-height: 25px;
+    color: #FFFFFF;
+}
+.nav-var{
+    height: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+}
+.menu-btn{
+    display: none;
+}
+.nav-var ul{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 36px;
+}
+.nav-var ul li a{
+    text-decoration: none;
+    color: white;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+}
+.nav-var>img{
+    width: 50px;
+    height: 50px;
+    padding: 5px 0 0 36px;
+}
+/* Header Ends Here */
 
 
 /* Top players Starts Here*/
@@ -177,6 +239,122 @@
 
   /* Mobile Devices */
   @media only screen and (max-width:688px){
+    header nav{
+        width: 100%;
+    }
+    .nav-var ul,img[alt="profile"]{
+        display: none;
+    }
+    .menu-icon{
+        display: block;
+        padding: 30px 20px;
+        position: relative;
+        background-color: transparent;
+    }
+    .menu-icon .nav-icon{
+        display: block;
+        background: var(--black-color);
+        height: 4px;
+        width: 30px;
+        position: relative;
+        transition: all .2s ease-in-out;
+    }
+    .menu-icon .nav-icon::before{
+        content: "";
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: absolute;
+        background-color: var(--black-color);
+        top: -10px;
+        transition: all .2s ease-in-out;
+    }
+    .menu-icon .nav-icon::after{
+        content: "";
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: absolute;
+        background-color: var(--black-color);
+        top: 10px;
+        transition: all .2s ease-in-out;
+    }
+    input:checked ~.nav-var .menu-icon .nav-icon{
+        background: transparent;
+    }
+    input:checked ~.nav-var .menu-icon .nav-icon::before{
+        position: absolute;
+        top: 0;
+        transform: rotate(-45deg);
+    }
+    input:checked ~.nav-var .menu-icon .nav-icon::after{
+        position: absolute;
+        top: 0;
+        transform: rotate(45deg);
+    }
+    input:checked ~.nav-var ul{
+        display: block;
+        position:absolute;
+        right: -30px;
+        background: rgba(173, 216, 230, 0.305);
+        width: 150px;
+        top: 65px;
+        padding-left: 15px;
+        backdrop-filter: blur(5px);
+    }
+    input:checked ~ .nav-var img[alt="profile"]{
+        display: block;
+    }
+    input:checked ~ .nav-var img[alt="profile"]{
+        display: block;
+    }
+    input:checked ~ .nav-var .nav-var{
+        width: 0;
+    }
+    input:checked ~ .nav-var{
+        width: 150px;
+    }
+
+    /* Nav Cross Style Ends Here */
+    
+    /* Nav list Starts Here */
+    .nav-var{
+        display: flex;
+        flex-flow: column nowrap;
+        position: absolute;
+        right: 15px;
+        background-color: #542eff00;
+        width: 80px;
+        right: 0;
+        transition: all .2s;
+    }
+    .nav-var ul{
+        position: absolute;
+        right: 0;
+        top: 100px;
+        transition: all .2s;
+    }
+    .nav-var ul li{
+        width: 100px;
+        text-align: center;
+        border-bottom: 2px double silver;
+        transition: all .2s;
+    }
+    .nav-var ul li a{
+        line-height: 50px;
+        padding-right: 30px;
+       
+        color: rgb(0, 0, 0);
+        transition: all .2s;
+    }
+    .nav-var>img{
+        position: absolute;
+        right: 20px;
+        top: 5px;
+        transition: all .2s;
+    }
+    /* Nav list Ends Here */
+    
     .section-title{
         display: flex;
         justify-content: center;
@@ -247,9 +425,4 @@
         width: 50%;
     }
 
-
-    .courses-banner img, .blogs .blog-thumnal img{
-        width: 100%;
-        height: auto;
-    }
 }
